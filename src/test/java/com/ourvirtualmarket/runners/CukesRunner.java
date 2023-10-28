@@ -13,8 +13,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports.html"
         },
         dryRun = false,
-        tags = ""
+        tags = "@regression"
 )
-
 public class CukesRunner {
 }
