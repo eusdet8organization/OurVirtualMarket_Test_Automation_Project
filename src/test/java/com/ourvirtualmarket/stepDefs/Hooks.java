@@ -1,6 +1,6 @@
-package com.zeroBank.StepDefs;
+package com.ourvirtualmarket.stepDefs;
 
-import com.zeroBank.utilities.Driver;
+import com.ourvirtualmarket.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

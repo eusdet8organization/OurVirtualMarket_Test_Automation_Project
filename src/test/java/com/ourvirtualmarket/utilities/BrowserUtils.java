@@ -1,4 +1,4 @@
-package com.zeroBank.utilities;
+package com.ourvirtualmarket.utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
@@ -15,7 +15,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 public class BrowserUtils {
     /*

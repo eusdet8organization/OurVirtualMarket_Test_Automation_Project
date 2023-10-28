@@ -1,4 +1,4 @@
-package com.zeroBank.utilities;
+package com.ourvirtualmarket.utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;
