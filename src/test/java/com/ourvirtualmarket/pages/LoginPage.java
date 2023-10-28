@@ -30,6 +30,9 @@ public class LoginPage extends BasePage{
     @FindBy(className = "close-login")
     private WebElement loginCloseButton;
 
+    @FindBy(xpath = "//div[.=' Warning: No match for E-Mail Address and/or Password.']")
+    private WebElement warningMessageText;
+
     public void verifyLoginPageStructure() {
         BrowserUtils.waitForVisibility(emailAddressBar,4);
 
@@ -46,5 +49,9 @@ public class LoginPage extends BasePage{
         emailAddressBar.sendKeys(email);
         passwordBar.sendKeys(password);
         loginButton.click();
+    }
+
+    public void verifyInvalidLogin() {
+        BrowserUtils.verifyElementDisplayed(warningMessageText);
     }
 }

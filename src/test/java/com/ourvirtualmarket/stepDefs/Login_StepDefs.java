@@ -17,4 +17,9 @@ public class Login_StepDefs {
     public void the_user_logins_with_credentials_and(String email, String password) {
         loginPage.login(email, password);
     }
+
+    @Then("Verify Warning Message")
+    public void verify_warning_message() {
+        loginPage.verifyInvalidLogin();
+    }
 }
