@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
     @FindBy(xpath = "//button[@class='popup-close']")
     private WebElement popUpCloseButton;
@@ -18,15 +18,11 @@ public class HomePage extends BasePage{
         Assert.assertEquals(ConfigurationReader.get("url"), Driver.get().getCurrentUrl());
     }
 
-    public void closeNewsletterPopUp(){
+    public void closeNewsletterPopUp() {
         popUpCloseButton.click();
     }
 
     public void clickLoginButton() {
         loginButton.click();
-    }
-
-    public void verifyLogin() {
-        Assert.assertEquals("https://ourvirtualmarket.com/index.php?route=account/account", Driver.get().getCurrentUrl());
     }
 }

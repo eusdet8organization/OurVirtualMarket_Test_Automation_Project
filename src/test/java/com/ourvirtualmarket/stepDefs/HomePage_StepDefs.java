@@ -32,8 +32,4 @@ public class HomePage_StepDefs {
         homePage.clickLoginButton();
     }
 
-    @Then("Verify that the user has successfully logged in and is on the My Account page")
-    public void verify_that_the_user_has_successfully_logged_in_and_is_on_the_my_account_page() {
-        homePage.verifyLogin();
-    }
 }

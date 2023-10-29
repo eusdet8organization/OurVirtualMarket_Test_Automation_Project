@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     @FindBy(id = "email")
     private WebElement emailAddressBar;
@@ -34,12 +34,12 @@ public class LoginPage extends BasePage{
     private WebElement warningMessageText;
 
     public void verifyLoginPageStructure() {
-        BrowserUtils.waitForVisibility(emailAddressBar,4);
+        BrowserUtils.waitForVisibility(emailAddressBar, 4);
 
         BrowserUtils.verifyElementDisplayed(emailAddressBar);
         BrowserUtils.verifyElementDisplayed(passwordBar);
         BrowserUtils.verifyElementDisplayed(loginWithYourSocialAccountText);
-        Assert.assertEquals(4,socialMediaElements.size());
+        Assert.assertEquals(4, socialMediaElements.size());
         BrowserUtils.verifyElementDisplayed(loginButton);
         BrowserUtils.verifyElementDisplayed(createAnAccountText);
         BrowserUtils.verifyElementDisplayed(loginCloseButton);
@@ -47,6 +47,7 @@ public class LoginPage extends BasePage{
 
     public void login(String email, String password) {
         emailAddressBar.sendKeys(email);
+        BrowserUtils.waitForVisibility(passwordBar, 5);
         passwordBar.sendKeys(password);
         loginButton.click();
     }
