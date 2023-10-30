@@ -1,6 +1,7 @@
 package com.ourvirtualmarket.pages;
 
 import com.ourvirtualmarket.utilities.BrowserUtils;
+import com.ourvirtualmarket.utilities.ConfigurationReader;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,6 +52,14 @@ public class LoginPage extends BasePage {
         passwordBar.sendKeys(password);
         loginButton.click();
     }
+
+
+    public void login() {
+        emailAddressBar.sendKeys(ConfigurationReader.get("userEmail"));
+        passwordBar.sendKeys(ConfigurationReader.get("userPassword"));
+        loginButton.click();
+    }
+
 
     public void verifyInvalidLogin() {
         BrowserUtils.verifyElementDisplayed(warningMessageText);
