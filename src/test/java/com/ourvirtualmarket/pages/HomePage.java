@@ -10,9 +10,24 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//button[@class='popup-close']")
     private WebElement popUpCloseButton;
-
     @FindBy(css = ".link-lg")
     private WebElement loginButton;
+
+    @FindBy(xpath = "//span[text()='Trending items']")
+    public WebElement trendingItemsLabel;
+
+    @FindBy(css = ".left-block a[title*='NHD146 Hair']")
+    public WebElement hairProduct;
+
+    @FindBy(css = "button[onclick*='7487326 ']")
+    public WebElement addToCartButtonSmall;
+
+    @FindBy(css = ".alert.alert-success")
+    public WebElement succesMessageAddToCart;
+
+
+    @FindBy(linkText = "Checkout")
+    public WebElement checkoutButton;
 
     public void verifyHomePage() {
         Assert.assertEquals(ConfigurationReader.get("url"), Driver.get().getCurrentUrl());
