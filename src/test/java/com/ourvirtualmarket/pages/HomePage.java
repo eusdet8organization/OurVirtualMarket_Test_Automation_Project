@@ -38,6 +38,8 @@ public class HomePage extends BasePage {
     @FindBy(css = "div[class='nav-secondary'] a")  //div[@class='nav-secondary']//a
     public List<WebElement> categories;
 
+
+
     public void verifyHomePage() {
         Assert.assertEquals(ConfigurationReader.get("url"), Driver.get().getCurrentUrl());
     }
