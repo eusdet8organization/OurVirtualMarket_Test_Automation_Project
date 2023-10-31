@@ -4,6 +4,8 @@ import com.ourvirtualmarket.utilities.BrowserUtils;
 import com.ourvirtualmarket.utilities.ConfigurationReader;
 import com.ourvirtualmarket.utilities.Driver;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,6 +17,8 @@ public class HomePage extends BasePage {
     private WebElement popUpCloseButton;
     @FindBy(css = ".link-lg")
     private WebElement loginButton;
+    @FindBy(css = ".link-lg")
+    private WebElement logoutButton;
     @FindBy(xpath = "(//a[text()='Register'])[2]")
     private WebElement registerButton;
 
@@ -40,6 +44,23 @@ public class HomePage extends BasePage {
     @FindBy(css = "div[class='nav-secondary'] a")  //div[@class='nav-secondary']//a
     public List<WebElement> categories;
 
+    @FindBy(className = "popup-title")
+    public WebElement newsletterPopUpTitle;
+
+    @FindBy(name = "submit")
+    public WebElement newsletterSubmitButton;
+
+    @FindBy(id = "txtemail")
+    public WebElement newsletterSubmitTextArea;
+
+    @FindBy(xpath = "//div[@role='alert'][contains(.,'Subcription was successfull')]")
+    public WebElement subcriptionSuccessfullText;
+
+    @FindBy(xpath = "//div[@role='alert'][contains(.,'Email has already exist')]")
+    public WebElement subcriptionErrorText;
+
+    @FindBy(xpath = "//h1[.='Account Logout']")
+    public WebElement accountLogoutText;
 
 
     public void verifyHomePage() {
@@ -53,7 +74,56 @@ public class HomePage extends BasePage {
     public void clickLoginButton() {
         loginButton.click();
     }
+
     public void clickRegisterButton() {
         registerButton.click();
     }
+
+    public void verifyNewsletterPopUp() {
+        BrowserUtils.verifyElementDisplayed(newsletterPopUpTitle);
+    }
+
+    public void scrollToBottom() {
+        BrowserUtils.scrollToElement(newsletterSubmitButton);
+    }
+
+    public void verifyNewsletterPopUpAtBottom() {
+        BrowserUtils.verifyElementDisplayed(newsletterSubmitButton);
+    }
+
+    public void enterEmailToSubscribe() {
+        newsletterSubmitTextArea.sendKeys("testmail5@testmail.com");
+        newsletterSubmitButton.click();
+    }
+
+    public void verifySubscriptionSuccess() {
+        BrowserUtils.verifyElementDisplayed(subcriptionSuccessfullText);
+    }
+
+    public void verifySubscriptionError() {
+        BrowserUtils.verifyElementDisplayed(subcriptionErrorText);
+    }
+
+    public void logout() {
+        logoutButton.click();
+    }
+
+    public void verifyLogout() {
+        BrowserUtils.verifyElementDisplayed(accountLogoutText);
+    }
+
+    public void verifyNewsletterPopUpNotVisible() {
+        BrowserUtils.verifyElementNotDisplayed(By.className("popup-title"));
+    }
+
+    public void enterInvalidEmailToSubscribe() {
+        newsletterSubmitTextArea.sendKeys("");
+        newsletterSubmitButton.click();
+    }
+
+    public void verifyEmailRequired() {
+        Alert alert = Driver.get().switchTo().alert();
+        Assert.assertEquals(alert.getText(), "Email is required");
+    }
+
 }

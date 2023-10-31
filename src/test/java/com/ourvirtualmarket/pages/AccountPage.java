@@ -13,4 +13,7 @@ public class AccountPage extends BasePage {
         televisionButton.click();
     }
 
+    public void clickHomeMenu() {
+        homeButton.click();
+    }
 }

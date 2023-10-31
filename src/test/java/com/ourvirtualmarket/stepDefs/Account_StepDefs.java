@@ -17,4 +17,9 @@ public class Account_StepDefs {
     public void verify_that_the_user_has_successfully_logged_in_and_is_on_the_my_account_page() {
         accountPage.verifyLogin();
     }
+
+    @When("The user clicks on Home button")
+    public void the_user_clicks_on_home_button() {
+        accountPage.clickHomeMenu();
+    }
 }
