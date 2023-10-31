@@ -36,4 +36,62 @@ public class HomePage_StepDefs {
     public void theUserClicksRegisterButton() {
         homePage.clickRegisterButton();
     }
+
+    @Then("Verify Newsletter pop-up")
+    public void verify_newsletter_pop_up() {
+        homePage.verifyNewsletterPopUp();
+    }
+
+    @When("The user scrolls down to bottom")
+    public void the_user_scrolls_down_to_bottom() {
+        homePage.scrollToBottom();
+    }
+
+    @Then("Verify that Newsletter subscription option is at the bottom")
+    public void verify_that_newsletter_subscription_option_is_at_the_bottom() {
+        homePage.verifyNewsletterPopUpAtBottom();
+    }
+
+    @When("The user enters valid email on the subscribe")
+    public void the_user_enters_valid_email_on_the_subscribe() {
+        homePage.enterEmailToSubscribe();
+    }
+
+    @Then("Verify Subscription was successful success message")
+    public void verify_subscription_was_successful_success_message() {
+        homePage.verifySubscriptionSuccess();
+    }
+
+    @Then("Verify Email has already exist Error message")
+    public void verify_email_has_already_exist_error_message() {
+        homePage.verifySubscriptionError();
+
+    }
+
+    @When("The user clicks Logout button")
+    public void the_user_clicks_logout_button() {
+        homePage.logout();
+    }
+
+    @Then("Verify the user logged out")
+    public void verify_the_user_logged_out() {
+        homePage.verifyLogout();
+    }
+
+    @Then("Verify that Newsletter is not visible")
+    public void verify_that_newsletter_is_not_visible() {
+        homePage.verifyNewsletterPopUpNotVisible();
+    }
+
+    @When("The user enters invalid email on the subscribe")
+    public void theUserEntersInvalidEmailOnTheSubscribe() {
+        homePage.enterInvalidEmailToSubscribe();
+    }
+
+    @Then("Verify Email is required alert message")
+    public void verifyEmailIsRequiredAlertMessage() {
+        homePage.verifyEmailRequired();
+    }
+
+
 }

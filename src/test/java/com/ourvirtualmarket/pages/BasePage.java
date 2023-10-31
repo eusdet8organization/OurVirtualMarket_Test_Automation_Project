@@ -19,6 +19,7 @@ public abstract class BasePage {
     @FindBy(css = ".fa.fa-shopping-bag")
     public WebElement shoppingBag;
 
-
+    @FindBy(xpath = "//strong[contains(.,'Home')]")
+    protected WebElement homeButton;
 
 }
