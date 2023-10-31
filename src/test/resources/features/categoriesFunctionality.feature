@@ -1,3 +1,4 @@
+@category
 Feature: Categories Functionality
 
   Background:
@@ -10,40 +11,30 @@ Feature: Categories Functionality
       | TELEVISIONS     |
       | TV ACCESSORIES  |
 
-    @cancelCategorie
+
   Scenario: TC-001 Canceling Categories
     And The user clicks X button
     Then Verify that the user is on the homepage
 
-  @wip1
+
   Scenario: TC-002 Select by categoryName-01
-    When The user navigates to the first element
-    Then Verify that the category title matches the text of the first element
+    When The user clicks on the "Health & Beauty" category
+    Then Verify that the "HEALTH & BEAUTY" category is selected
 
-  @wip1
   Scenario: TC-003 Select by categoryName-02
-    When The user navigates to the second element
-    Then Verify that the category title matches the text of the second element
+    When The user clicks on the "Networking" category
+    Then Verify that the "NETWORKING" category is selected
 
-  @wip1
+
   Scenario: TC-004 Select by categoryName-03
-    When The user navigates to the third element
-    Then Verify that the category title matches the text of the third element
+    When The user clicks on the "Televisions" category
+    Then Verify that the "TELEVISIONS" category is selected
 
-  @wip1
+
   Scenario: TC-005 Select by categoryName-04
-    When The user navigates to the fourth element
-    Then Verify that the category title matches the text of the fourth element
+    When The user clicks on the "TV Accessories" category
+    Then Verify that the "TV ACCESSORIES" category is selected
 
 
-#  @wip2
-#  Scenario Outline: Select by <categoryName>
-#    When The user navigates to "<categoryName>"
-#  #  Then Verify that the category title matches the selected "<categoryName>"
-#    Examples:
-#      | categoryName    |
-#      | HEALTH & BEAUTY |
-#      | NETWORKING      |
-#      | TELEVISIONS     |
-#      | TV ACCESSORIES  |
+
 

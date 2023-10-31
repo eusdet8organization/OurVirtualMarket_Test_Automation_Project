@@ -62,6 +62,8 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//h1[.='Account Logout']")
     public WebElement accountLogoutText;
 
+    @FindBy(css = ".title-category ")
+    public WebElement categoryTitle;
 
     public void verifyHomePage() {
         Assert.assertEquals(ConfigurationReader.get("url"), Driver.get().getCurrentUrl());
@@ -126,4 +128,7 @@ public class HomePage extends BasePage {
         Assert.assertEquals(alert.getText(), "Email is required");
     }
 
+    public void selectCategory(String category){
+        BrowserUtils.clickWithJS(Driver.get().findElement(By.xpath("//div[@class='nav-secondary']/descendant::a[text()='"+category+"']")));
+    }
 }
