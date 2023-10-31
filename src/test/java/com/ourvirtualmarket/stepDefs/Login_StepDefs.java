@@ -1,6 +1,7 @@
 package com.ourvirtualmarket.stepDefs;
 
 import com.ourvirtualmarket.pages.LoginPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -21,5 +22,10 @@ public class Login_StepDefs {
     @Then("Verify Warning Message")
     public void verify_warning_message() {
         loginPage.verifyInvalidLogin();
+    }
+
+    @And("The user enters with the valid credentials")
+    public void theUserEntersWithTheValidCredentials() {
+        loginPage.login();
     }
 }
