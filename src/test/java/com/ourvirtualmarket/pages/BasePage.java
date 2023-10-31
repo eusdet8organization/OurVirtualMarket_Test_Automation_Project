@@ -16,4 +16,9 @@ public abstract class BasePage {
     @FindBy(className = "style-page")
     protected WebElement televisionButton;
 
+    @FindBy(css = ".fa.fa-shopping-bag")
+    public WebElement shoppingBag;
+
+
+
 }
