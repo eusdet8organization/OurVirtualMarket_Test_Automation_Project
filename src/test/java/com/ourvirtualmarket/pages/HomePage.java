@@ -13,6 +13,8 @@ public class HomePage extends BasePage {
 
     @FindBy(css = ".link-lg")
     private WebElement loginButton;
+    @FindBy(xpath = "(//a[text()='Register'])[2]")
+    private WebElement registerButton;
 
     public void verifyHomePage() {
         Assert.assertEquals(ConfigurationReader.get("url"), Driver.get().getCurrentUrl());
@@ -24,5 +26,8 @@ public class HomePage extends BasePage {
 
     public void clickLoginButton() {
         loginButton.click();
+    }
+    public void clickRegisterButton() {
+        registerButton.click();
     }
 }
