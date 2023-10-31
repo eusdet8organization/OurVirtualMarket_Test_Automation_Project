@@ -32,4 +32,8 @@ public class HomePage_StepDefs {
         homePage.clickLoginButton();
     }
 
+    @When("The user clicks Register button")
+    public void theUserClicksRegisterButton() {
+        homePage.clickRegisterButton();
+    }
 }

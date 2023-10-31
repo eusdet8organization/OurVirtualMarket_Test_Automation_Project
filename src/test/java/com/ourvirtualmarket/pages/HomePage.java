@@ -15,6 +15,8 @@ public class HomePage extends BasePage {
     private WebElement popUpCloseButton;
     @FindBy(css = ".link-lg")
     private WebElement loginButton;
+    @FindBy(xpath = "(//a[text()='Register'])[2]")
+    private WebElement registerButton;
 
     @FindBy(xpath = "//span[text()='Trending items']")
     public WebElement trendingItemsLabel;
@@ -38,6 +40,8 @@ public class HomePage extends BasePage {
     @FindBy(css = "div[class='nav-secondary'] a")  //div[@class='nav-secondary']//a
     public List<WebElement> categories;
 
+
+
     public void verifyHomePage() {
         Assert.assertEquals(ConfigurationReader.get("url"), Driver.get().getCurrentUrl());
     }
@@ -49,6 +53,7 @@ public class HomePage extends BasePage {
     public void clickLoginButton() {
         loginButton.click();
     }
-
-
+    public void clickRegisterButton() {
+        registerButton.click();
+    }
 }
