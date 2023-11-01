@@ -102,7 +102,7 @@ public class HomePage extends BasePage {
     }
 
 
-}
+
 
     public void verifyNewsletterPopUp() {
         BrowserUtils.verifyElementDisplayed(newsletterPopUpTitle);
