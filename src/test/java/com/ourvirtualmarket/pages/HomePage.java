@@ -95,7 +95,6 @@ public class HomePage extends BasePage {
         BrowserUtils.scrollToElement(returnClick);
         returnClick.click();
     }
-}
     public void verifySearchBarAndSearchButton(){
         BrowserUtils.verifyElementDisplayed(searchBar);
         BrowserUtils.verifyElementDisplayed(searchButton);
