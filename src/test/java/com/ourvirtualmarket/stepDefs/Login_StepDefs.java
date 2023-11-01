@@ -28,4 +28,10 @@ public class Login_StepDefs {
     public void theUserEntersWithTheValidCredentials() {
         loginPage.login();
     }
+
+
+    @Then("Verify that the user is redirected to Login page")
+    public void verify_that_the_user_is_redirected_to_login_page() {
+        loginPage.verifyLoginPage();
+    }
 }

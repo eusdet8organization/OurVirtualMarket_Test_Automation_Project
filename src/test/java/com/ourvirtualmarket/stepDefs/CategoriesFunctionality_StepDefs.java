@@ -15,12 +15,12 @@ public class CategoriesFunctionality_StepDefs {
     HomePage homePage = new HomePage();
 
 
-
     @When("The user clicks on the Categorie button")
     public void the_user_clicks_on_the_categorie_button() {
         homePage.categoriesButton.click();
         BrowserUtils.waitFor(1);
     }
+
     @When("The user clicks X button")
     public void the_user_clicks_x_button() {
         homePage.popupClose.click();
@@ -32,4 +32,13 @@ public class CategoriesFunctionality_StepDefs {
         Assert.assertEquals(expectedCategoryList, actualCategoryList);
     }
 
+    @When("The user clicks on the {string} category")
+    public void theUserClicksOnTheCategory(String category) {
+        homePage.selectCategory(category);
+    }
+
+    @Then("Verify that the {string} category is selected")
+    public void verifyThatTheCategoryIsSelected(String categoryTitle) {
+        Assert.assertEquals(homePage.categoryTitle.getText(), categoryTitle);
+    }
 }
