@@ -22,4 +22,24 @@ public class Account_StepDefs {
     public void the_user_clicks_on_home_button() {
         accountPage.clickHomeMenu();
     }
+
+    @Then("Verify that the user is on Account page")
+    public void verify_that_the_user_is_on_account_page() {
+        accountPage.verifyAccountPage();
+    }
+
+    @When("The user clicks My Account button")
+    public void the_user_clicks_my_account_button() {
+        accountPage.clickMyAccountButton();
+    }
+
+    @When("The user clicks Address Book button")
+    public void the_user_clicks_address_book_button() {
+        accountPage.clickAddressBookButton();
+    }
+
+    @When("The user clicks continue button on Account Page")
+    public void theUserClicksContinueButtonOnAccountPage() {
+        accountPage.clickContinueButton();
+    }
 }
