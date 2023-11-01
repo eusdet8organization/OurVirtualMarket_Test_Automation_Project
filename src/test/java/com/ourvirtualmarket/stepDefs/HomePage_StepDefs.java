@@ -36,4 +36,10 @@ public class HomePage_StepDefs {
     public void theUserClicksRegisterButton() {
         homePage.clickRegisterButton();
     }
+
+    @When("The user click the return")
+    public void theUserClickTheReturn() {
+
+        homePage.clickReturn();
+    }
 }

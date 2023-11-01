@@ -40,6 +40,9 @@ public class HomePage extends BasePage {
     @FindBy(css = "div[class='nav-secondary'] a")  //div[@class='nav-secondary']//a
     public List<WebElement> categories;
 
+    @FindBy(xpath = "//div[@class='box-service box-footer']//*//li[2]//a")
+    public WebElement returnClick;
+
 
 
     public void verifyHomePage() {
@@ -55,5 +58,10 @@ public class HomePage extends BasePage {
     }
     public void clickRegisterButton() {
         registerButton.click();
+    }
+
+    public void clickReturn(){
+        BrowserUtils.scrollToElement(returnClick);
+        returnClick.click();
     }
 }
