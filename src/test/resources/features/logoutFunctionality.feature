@@ -16,7 +16,7 @@ Feature: Login Functionality
     Then Verify that the user is redirected to Login page
 
   @logout2
-  Scenario: TC 001 - Logout
+  Scenario: TC 002 - Logout
     Given The user is on the homepage
     When The user closes Newsletter pop-up
     When The user clicks Login button
@@ -32,7 +32,7 @@ Feature: Login Functionality
     Then Verify that the user is redirected to Login page
 
   @logout3
-  Scenario: TC 001 - Logout
+  Scenario: TC 003 - Logout
     Given The user is on the homepage
     When The user closes Newsletter pop-up
     When The user clicks Login button
