@@ -28,6 +28,7 @@ public abstract class BasePage {
 
 
 
-
+    @FindBy(xpath = "//strong[contains(.,'Home')]")
+    protected WebElement homeButton;
 
 }
