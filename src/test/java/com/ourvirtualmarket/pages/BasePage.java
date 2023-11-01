@@ -18,6 +18,15 @@ public abstract class BasePage {
 
     @FindBy(css = ".fa.fa-shopping-bag")
     public WebElement shoppingBag;
+    @FindBy(xpath = "//input[@name='search']")
+    protected WebElement searchBar;
+    @FindBy(xpath = "//button[@name='submit_search']")
+    protected WebElement searchButton;
+
+
+
+
+
 
 
 

@@ -56,4 +56,19 @@ public class HomePage extends BasePage {
     public void clickRegisterButton() {
         registerButton.click();
     }
+    public void verifySearchBarAndSearchButton(){
+        BrowserUtils.verifyElementDisplayed(searchBar);
+        BrowserUtils.verifyElementDisplayed(searchButton);
+    }
+    public void verifySearchBarDefaultValue(){
+        String value="Search";
+        String defaultValue=searchBar.getAttribute("placeholder");
+        Assert.assertEquals(defaultValue,value);
+    }
+    public void sendProductToSearchBar(String productName){
+        searchBar.sendKeys(productName);
+        searchButton.click();
+    }
+
+
 }
