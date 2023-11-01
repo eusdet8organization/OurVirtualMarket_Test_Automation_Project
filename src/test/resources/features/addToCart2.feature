@@ -10,7 +10,7 @@ Feature: Add to Cart 2
     When The user is on the homepage
     And The user closes Newsletter pop-up
     And The user scrolls up to the Trending Items section on the home page
-    And The user adds any product to the cart
+    And The user adds the product "Noerden" in the Add to Cart
     Then It is verified that success message displayed
     When The user clicks on Shopping Cart
     Then It is verified that the added product is in the cart

@@ -9,7 +9,7 @@ Feature: Succes Shopping
     And The user is on the homepage
     And The user closes Newsletter pop-up
     And The user scrolls up to the Trending Items section on the home page
-    And The user adds any product to the cart
+    And The user adds the product "Noerden" in the Add to Cart
     And The user clicks on Shopping Cart
     And The user click the checkout button
     And The user fills the Billing Details form with: "<firstname>", "<lastname>", "<company>", "<address1>", "<address2>" , "<city>" and "<postcode>"
@@ -42,7 +42,7 @@ Feature: Succes Shopping
     And The user is on the homepage
     And The user closes Newsletter pop-up
     And The user scrolls up to the Trending Items section on the home page
-    And The user adds any product to the cart
+    And The user adds the product "Noerden" in the Add to Cart
     And The user clicks on Shopping Cart
     And The user click the checkout button
     Then Verify that the existing address is selected in billing details menu
@@ -72,7 +72,7 @@ Feature: Succes Shopping
     And The user is on the homepage
     And The user closes Newsletter pop-up
     And The user scrolls up to the Trending Items section on the home page
-    And The user adds any product to the cart
+    And The user adds the product "Noerden" in the Add to Cart
     And The user clicks on Shopping Cart
     And The user click the checkout button
     Then Verify that the existing address is selected in billing details menu

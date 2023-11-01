@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports.html"
         },
         dryRun = false,
-        tags = "@searchFuctionality"
+        tags = "@addToCart2"
 )
 public class CukesRunner {
 }

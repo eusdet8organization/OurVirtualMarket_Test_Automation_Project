@@ -16,7 +16,7 @@ public abstract class BasePage {
     @FindBy(className = "style-page")
     protected WebElement televisionButton;
 
-    @FindBy(css = ".fa.fa-shopping-bag")
+    @FindBy(id = "cart")
     public WebElement shoppingBag;
     @FindBy(xpath = "//input[@name='search']")
     protected WebElement searchBar;
