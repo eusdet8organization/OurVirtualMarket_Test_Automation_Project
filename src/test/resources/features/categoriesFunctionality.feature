@@ -16,25 +16,16 @@ Feature: Categories Functionality
     And The user clicks X button
     Then Verify that the user is on the homepage
 
-
-  Scenario: TC-002 Select by categoryName-01
-    When The user clicks on the "Health & Beauty" category
-    Then Verify that the "HEALTH & BEAUTY" category is selected
-
-  Scenario: TC-003 Select by categoryName-02
-    When The user clicks on the "Networking" category
-    Then Verify that the "NETWORKING" category is selected
-
-
-  Scenario: TC-004 Select by categoryName-03
-    When The user clicks on the "Televisions" category
-    Then Verify that the "TELEVISIONS" category is selected
-
-
-  Scenario: TC-005 Select by categoryName-04
-    When The user clicks on the "TV Accessories" category
-    Then Verify that the "TV ACCESSORIES" category is selected
-
+  @newCategory
+  Scenario Outline: TC-002 Select by categoryName-01
+    When The user clicks on the "<categoryName>" category
+    Then Verify that the "<categoryTitle>" category is selected
+    Examples:
+      | categoryName    | categoryTitle   |
+      | Health & Beauty | HEALTH & BEAUTY |
+      | Networking      | NETWORKING      |
+      | Televisions     | TELEVISIONS     |
+      | TV Accessories  | TV ACCESSORIES  |
 
 
 
