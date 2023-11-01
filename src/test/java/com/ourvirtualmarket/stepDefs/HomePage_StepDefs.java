@@ -93,5 +93,18 @@ public class HomePage_StepDefs {
         homePage.verifyEmailRequired();
     }
 
+    @Then("Verify logout with extra info")
+    public void verify_logout_with_extra_info() {
+        homePage.verifyLogoutWithExtraInfo();
+    }
 
+    @When("The user navigates to back page")
+    public void the_user_navigates_to_back_page() {
+        homePage.navigateBack();
+    }
+
+    @Then("Verify Account Logout Text")
+    public void verifyAccountLogoutText() {
+        homePage.verifyLogoutWithExtraInfo();
+    }
 }

@@ -65,6 +65,13 @@ public class HomePage extends BasePage {
     @FindBy(css = ".title-category ")
     public WebElement categoryTitle;
 
+    @FindBy(id = "content")
+    public WebElement logoutParagraph;
+
+    @FindBy(xpath = "//a[.='Continue']")
+    public WebElement continueButton;
+
+
     public void verifyHomePage() {
         Assert.assertEquals(ConfigurationReader.get("url"), Driver.get().getCurrentUrl());
     }
@@ -128,7 +135,18 @@ public class HomePage extends BasePage {
         Assert.assertEquals(alert.getText(), "Email is required");
     }
 
-    public void selectCategory(String category){
-        BrowserUtils.clickWithJS(Driver.get().findElement(By.xpath("//div[@class='nav-secondary']/descendant::a[text()='"+category+"']")));
+    public void selectCategory(String category) {
+        BrowserUtils.clickWithJS(Driver.get().findElement(By.xpath("//div[@class='nav-secondary']/descendant::a[text()='" + category + "']")));
+    }
+
+    public void verifyLogoutWithExtraInfo() {
+        BrowserUtils.verifyElementDisplayed(accountLogoutText);
+        Assert.assertTrue(logoutParagraph.getText().contains("You have been logged off your account. It is now safe to leave the computer."));
+        Assert.assertTrue(logoutParagraph.getText().contains("Your shopping cart has been saved, the items inside it will be restored whenever you log back into your account."));
+        BrowserUtils.verifyElementDisplayed(continueButton);
+    }
+
+    public void navigateBack() {
+        Driver.get().navigate().back();
     }
 }

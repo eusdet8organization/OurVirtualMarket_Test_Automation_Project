@@ -2,6 +2,7 @@ package com.ourvirtualmarket.pages;
 
 import com.ourvirtualmarket.utilities.BrowserUtils;
 import com.ourvirtualmarket.utilities.ConfigurationReader;
+import com.ourvirtualmarket.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -63,5 +64,9 @@ public class LoginPage extends BasePage {
 
     public void verifyInvalidLogin() {
         BrowserUtils.verifyElementDisplayed(warningMessageText);
+    }
+
+    public void verifyLoginPage() {
+        Assert.assertEquals("https://ourvirtualmarket.com/index.php?route=account/login", Driver.get().getCurrentUrl());
     }
 }
