@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports.html"
         },
         dryRun = false,
-        tags = "@logout3"
+        tags = "@searchFuctionality"
 )
 public class CukesRunner {
 }
