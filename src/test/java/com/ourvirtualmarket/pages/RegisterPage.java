@@ -29,6 +29,7 @@ public class RegisterPage extends BasePage {
     private WebElement warningPrivacyPolicy;
 
     public void register(String FirstName, String LastName, String Email, String Telephone, String Password, String PasswordConfirm){
+
         firstNameBox.sendKeys(FirstName);
         lastNameBox.sendKeys(LastName);
         emailBox.sendKeys(Email);
