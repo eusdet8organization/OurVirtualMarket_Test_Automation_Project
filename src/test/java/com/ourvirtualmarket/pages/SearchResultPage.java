@@ -40,5 +40,8 @@ public class SearchResultPage extends BasePage{
         BrowserUtils.verifyElementDisplayed(productPrice);
         BrowserUtils.verifyElementDisplayed(availabilityStatus);
         BrowserUtils.verifyElementDisplayed(productViewed);
+
     }
+
+
 }
