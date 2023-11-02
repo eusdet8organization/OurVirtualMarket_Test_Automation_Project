@@ -25,12 +25,6 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//span[text()='Trending items']")
     public WebElement trendingItemsLabel;
 
-    @FindBy(css = ".left-block a[title*='NHD146 Hair']")
-    public WebElement hairProduct;
-
-    @FindBy(css = "button[onclick*='7487326 ']")
-    public WebElement addToCartButtonSmall;
-
     @FindBy(css = ".alert.alert-success")
     public WebElement succesMessageAddToCart;
 
@@ -110,8 +104,6 @@ public class HomePage extends BasePage {
     }
 
 
-
-
     public void verifyNewsletterPopUp() {
         BrowserUtils.verifyElementDisplayed(newsletterPopUpTitle);
     }
@@ -168,6 +160,17 @@ public class HomePage extends BasePage {
         Assert.assertTrue(logoutParagraph.getText().contains("You have been logged off your account. It is now safe to leave the computer."));
         Assert.assertTrue(logoutParagraph.getText().contains("Your shopping cart has been saved, the items inside it will be restored whenever you log back into your account."));
         BrowserUtils.verifyElementDisplayed(continueButton);
+    }
+
+    public void addAnyProduct(String product){
+        BrowserUtils.hover(Driver.get().findElement(By.xpath(" //div[@class='product-item-container']//h4//a[@title[contains(.,'"+product+"')]]")));
+        BrowserUtils.clickWithJS(Driver.get().findElement(By.xpath(" //a[@title[contains(.,'"+product+"')]]/../..//button[@title='Add to cart']")));
+    }
+
+    public void succesMessageAddedToCart(){
+        BrowserUtils.scrollToElement(succesMessageAddToCart);
+        String message = succesMessageAddToCart.getText();
+        Assert.assertTrue(message.contains("Succes"));
     }
 
     public void navigateBack() {
