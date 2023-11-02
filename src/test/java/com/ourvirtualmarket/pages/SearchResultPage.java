@@ -11,7 +11,14 @@ public class SearchResultPage extends BasePage{
     @FindBy(id="product-image-7465747")
     protected WebElement relevantProduct;
     @FindBy(xpath = "//h1[@itemprop='name']")
-    protected WebElement relevantProductPageName;
+    protected WebElement relevantProductName;
+    @FindBy(xpath = "//span[@itemprop='price']")
+    protected WebElement productPrice;
+    @FindBy(xpath = "//div[@class='stock']")
+    protected WebElement availabilityStatus;
+    @FindBy(xpath = "//div[@class='inner-box-viewed ']")
+    protected WebElement productViewed;
+
 
 
 
@@ -24,7 +31,14 @@ public class SearchResultPage extends BasePage{
         relevantProduct.click();
     }
     public void verifyRelevantProductPage(){
-        Assert.assertTrue(relevantProductPageName.getText().contains("Samsung"));
+        Assert.assertTrue(relevantProductName.getText().contains("Samsung"));
     }
 
+
+    public void verifyProductInformations() {
+        BrowserUtils.verifyElementDisplayed(relevantProductName);
+        BrowserUtils.verifyElementDisplayed(productPrice);
+        BrowserUtils.verifyElementDisplayed(availabilityStatus);
+        BrowserUtils.verifyElementDisplayed(productViewed);
+    }
 }

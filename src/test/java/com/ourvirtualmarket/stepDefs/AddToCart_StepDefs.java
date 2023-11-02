@@ -17,9 +17,9 @@ public class AddToCart_StepDefs {
         searchResultPage.verifyRelevantProductPage();
 
     }
-    @Then("Verify that the relevant product displayes {string},{string},{string},{string}.")
-    public void verify_that_the_relevant_product_displayes(String string, String string2, String string3, String string4) {
-
+    @Then("Verify that the relevant product displayes info.")
+    public void verify_that_the_relevant_product_displayes_info() {
+        searchResultPage.verifyProductInformations();
     }
 
 
