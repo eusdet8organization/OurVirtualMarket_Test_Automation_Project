@@ -37,6 +37,12 @@ public class HomePage_StepDefs {
         homePage.clickRegisterButton();
     }
 
+    @When("The user click the return")
+    public void theUserClickTheReturn() {
+
+        homePage.clickReturn();
+    }
+
     @Then("Verify Newsletter pop-up")
     public void verify_newsletter_pop_up() {
         homePage.verifyNewsletterPopUp();

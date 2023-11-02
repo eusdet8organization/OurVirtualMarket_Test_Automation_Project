@@ -25,12 +25,6 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//span[text()='Trending items']")
     public WebElement trendingItemsLabel;
 
-    @FindBy(css = ".left-block a[title*='NHD146 Hair']")
-    public WebElement hairProduct;
-
-    @FindBy(css = "button[onclick*='7487326 ']")
-    public WebElement addToCartButtonSmall;
-
     @FindBy(css = ".alert.alert-success")
     public WebElement succesMessageAddToCart;
 
@@ -43,6 +37,9 @@ public class HomePage extends BasePage {
 
     @FindBy(css = "div[class='nav-secondary'] a")  //div[@class='nav-secondary']//a
     public List<WebElement> categories;
+
+    @FindBy(xpath = "//div[@class='box-service box-footer']//*//li[2]//a")
+    public WebElement returnClick;
 
     @FindBy(className = "popup-title")
     public WebElement newsletterPopUpTitle;
@@ -87,6 +84,11 @@ public class HomePage extends BasePage {
     public void clickRegisterButton() {
         registerButton.click();
     }
+
+    public void clickReturn(){
+        BrowserUtils.scrollToElement(returnClick);
+        returnClick.click();
+    }
     public void verifySearchBarAndSearchButton(){
         BrowserUtils.verifyElementDisplayed(searchBar);
         BrowserUtils.verifyElementDisplayed(searchButton);
@@ -100,8 +102,6 @@ public class HomePage extends BasePage {
         searchBar.sendKeys(productName);
         searchButton.click();
     }
-
-
 
 
     public void verifyNewsletterPopUp() {
@@ -160,6 +160,17 @@ public class HomePage extends BasePage {
         Assert.assertTrue(logoutParagraph.getText().contains("You have been logged off your account. It is now safe to leave the computer."));
         Assert.assertTrue(logoutParagraph.getText().contains("Your shopping cart has been saved, the items inside it will be restored whenever you log back into your account."));
         BrowserUtils.verifyElementDisplayed(continueButton);
+    }
+
+    public void addAnyProduct(String product){
+        BrowserUtils.hover(Driver.get().findElement(By.xpath(" //div[@class='product-item-container']//h4//a[@title[contains(.,'"+product+"')]]")));
+        BrowserUtils.clickWithJS(Driver.get().findElement(By.xpath(" //a[@title[contains(.,'"+product+"')]]/../..//button[@title='Add to cart']")));
+    }
+
+    public void succesMessageAddedToCart(){
+        BrowserUtils.scrollToElement(succesMessageAddToCart);
+        String message = succesMessageAddToCart.getText();
+        Assert.assertTrue(message.contains("Succes"));
     }
 
     public void navigateBack() {

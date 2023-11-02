@@ -2,9 +2,11 @@ package com.ourvirtualmarket.stepDefs;
 
 import com.ourvirtualmarket.pages.HomePage;
 import com.ourvirtualmarket.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+
 
 public class AddToCart2_StepDefs {
 
@@ -15,21 +17,14 @@ public class AddToCart2_StepDefs {
         BrowserUtils.scrollToElement(homePage.trendingItemsLabel);
     }
 
-    @When("The user adds any product to the cart")
-    public void the_user_adds_any_product_to_the_cart() {
-        BrowserUtils.hover(homePage.hairProduct);
-        BrowserUtils.waitFor(1);
-        homePage.addToCartButtonSmall.click();
-        BrowserUtils.waitFor(2);
-
+    @And("The user adds the product {string} in the Add to Cart")
+    public void theUserAddsTheProductInTheAddToCart(String product) {
+        homePage.addAnyProduct(product);
     }
 
     @Then("It is verified that success message displayed")
     public void it_is_verified_that_success_message_displayed() {
-        BrowserUtils.scrollToElement(homePage.succesMessageAddToCart);
-        String message = homePage.succesMessageAddToCart.getText();
-        Assert.assertTrue(message.contains("Succes"));
-
+        homePage.succesMessageAddedToCart();
     }
 
     @When("The user clicks on Shopping Cart")
@@ -42,5 +37,6 @@ public class AddToCart2_StepDefs {
     public void it_is_verified_that_the_added_product_is_in_the_cart() {
         Assert.assertTrue(homePage.checkoutButton.isDisplayed());
     }
+
 
 }
