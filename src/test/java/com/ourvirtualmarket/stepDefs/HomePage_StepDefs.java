@@ -3,6 +3,7 @@ package com.ourvirtualmarket.stepDefs;
 import com.ourvirtualmarket.pages.HomePage;
 import com.ourvirtualmarket.utilities.ConfigurationReader;
 import com.ourvirtualmarket.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -112,5 +113,11 @@ public class HomePage_StepDefs {
     @Then("Verify Account Logout Text")
     public void verifyAccountLogoutText() {
         homePage.verifyLogoutWithExtraInfo();
+    }
+
+    @And("The user click the Television")
+    public void theUserClickTheTelevision() {
+        homePage.categoriTelevision();
+
     }
 }
