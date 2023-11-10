@@ -68,6 +68,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[.='Continue']")
     public WebElement continueButton;
 
+    @FindBy(xpath = "//div/ul/li[3]/a/strong")
+    public WebElement categoriesTelevision;
+
 
     public void verifyHomePage() {
         Assert.assertEquals(ConfigurationReader.get("url"), Driver.get().getCurrentUrl());
@@ -175,5 +178,8 @@ public class HomePage extends BasePage {
 
     public void navigateBack() {
         Driver.get().navigate().back();
+    }
+    public void categoriTelevision(){
+        categoriesTelevision.click();
     }
 }
